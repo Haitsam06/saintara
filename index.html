@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saintara - Landing Page</title>
+    <style>
+      /* Mendefinisikan Palet Warna dari Gambar Anda */
+      :root {
+        --warna-900: #6b4f2e; /* Cokelat paling gelap */
+        --warna-800: #8d6e3f; /* Cokelat medium */
+        --warna-700: #c89b3c; /* Emas / Ochre */
+        --warna-600: #e6c87c; /* Emas muda / Tan */
+        --warna-500: #faf3e6; /* Krem / Putih Gading */
+        --putih: #ffffff;
+      }
+
+      /* Gaya Dasar */
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--warna-500);
+        color: var(--warna-900);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      section {
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--warna-900);
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.1em;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Tombol */
+      .btn {
+        padding: 12px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1em;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background-color: var(--warna-700);
+        color: var(--putih);
+        border: 2px solid var(--warna-700);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--warna-800);
+        border: 2px solid var(--warna-800);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Header & Hero */
+      header {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://source.unsplash.com/1600x900/?nature,calm") no-repeat center center/cover;
+        color: var(--putih);
+        padding: 20px 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      nav .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: var(--warna-600);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      nav ul li a {
+        color: var(--putih);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 120px 20px;
+      }
+
+      .hero h1 {
+        font-size: 3.5em;
+        color: var(--putih);
+        margin-bottom: 15px;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+        color: var(--warna-500);
+        margin-bottom: 30px;
+      }
+
+      /* Bagian Karakter */
+      .karakter-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+      .karakter-card {
+        background: var(--putih);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        width: 250px;
+      }
+      .karakter-card .icon {
+        font-size: 3em;
+      }
+      .karakter-card h3 {
+        color: var(--warna-800);
+        margin-top: 10px;
+      }
+
+      /* Bagian Testimoni */
+      .testimoni-card {
+        background: var(--putih);
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 600px;
+        margin: 20px auto;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      .testimoni-card p {
+        font-style: italic;
+      }
+      .testimoni-card .nama {
+        font-weight: bold;
+        color: var(--warna-800);
+        margin-top: 15px;
+      }
+
+      /* Bagian Paket & Harga */
+      #harga {
+        background-color: var(--putih); /* Sedikit beda untuk highlight */
+      }
+      .harga-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+      .harga-card {
+        background-color: var(--warna-600); /* Latar belakang Emas Muda */
+        padding: 40px 30px;
+        border-radius: 12px;
+        width: 280px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        color: var(--warna-900);
+      }
+      .harga-card h3 {
+        font-size: 1.5em;
+        border-bottom: 2px solid var(--warna-900);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--warna-900);
+        color: var(--warna-500);
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      footer .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: var(--warna-600);
+        margin-bottom: 10px;
+      }
+
+      footer p {
+        max-width: 100%;
+        font-size: 1em;
+        color: var(--warna-600);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">SAINTARA</div>
+        <ul>
+          <li><a href="#">Tentang</a></li>
+          <li><a href="#">Modul</a></li>
+          <li><a href="#">Kontak</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary">LOGIN</a>
+      </nav>
+      <div class="hero">
+        <h1>Kenali Karakter Alami dan Potensi Mendalam</h1>
+        <p>Untuk Anda, Keluarga, Pasangan, sahabat, dan tim</p>
+        <a href="#" class="btn btn-primary">Mulai Mencoba</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="mengapa">
+        <div class="container">
+          <h2>Mengapa Saintara?</h2>
+          <p>Saintara membantu Anda memahami dinamika kepribadian dan kecenderungan alami yang membentuk cara Anda berinteraksi. Temukan potensi tersembunyi dan bangun hubungan yang lebih harmonis dengan pemahaman yang lebih mendalam.</p>
+        </div>
+      </section>
+
+      <section id="karakter">
+        <div class="container">
+          <h2>Tabiat dan Karakter Manusia</h2>
+          <div class="karakter-container">
+            <div class="karakter-card">
+              <div class="icon">🧘</div>
+              <h3>Pendidik Introvert</h3>
+              <p>Tenang, reflektif, dan memiliki pemahaman mendalam.</p>
+            </div>
+            <div class="karakter-card">
+              <div class="icon">🎨</div>
+              <h3>Pengamat Extrovert</h3>
+              <p>Enerjik, bersemangat, dan mudah beradaptasi.</p>
+            </div>
+            <div class="karakter-card">
+              <div class="icon">🗣️</div>
+              <h3>Penganut Extrovert</h3>
+              <p>Sosial, ekspresif, dan pandai berkomunikasi.</p>
+            </div>
+          </div>
+          <br />
+          <br />
+          <a href="#" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+        </div>
+      </section>
+
+      <section id="testimoni">
+        <div class="container">
+          <h2>Testimoni</h2>
+          <div class="testimoni-grid">
+            <div class="testimoni-card">
+              <div class="profile-info">
+                <img src="https://i.ibb.co/hL4X1gV/Budi-Santoso.jpg" alt="Budi Santoso" class="profile-pic" />
+                <h3 class="name">Budi Santoso</h3>
+              </div>
+              <p class="quote">"Saintara sangat membantu saya dalam mengenal diri saya lebih lanjut."</p>
+            </div>
+
+            <div class="testimoni-card">
+              <div class="profile-info">
+                <img src="https://i.ibb.co/L5rK5L2/Meri.jpg" alt="Meri" class="profile-pic" />
+                <h3 class="name">Meri</h3>
+              </div>
+              <p class="quote">"Memberikan dampak yang signifikan dalam hidup saya sehingga membuka jalan baru."</p>
+            </div>
+
+            <div class="testimoni-card">
+              <div class="profile-info">
+                <img src="https://i.ibb.co/Zc2900V/Lastri.jpg" alt="Lastri" class="profile-pic" />
+                <h3 class="name">Lastri</h3>
+              </div>
+              <p class="quote">"Terimakasih Saintara saya bisa tahu karakter asli saya dan menjalani lebih baik hidup."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="logo">SAINTARA</div>
+      <p>Kenali diri, maksimalkan potensi.</p>
+      <p>&copy; 2025 SAINTARA. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
